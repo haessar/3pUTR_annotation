@@ -27,13 +27,13 @@ def prepare_argparser():
          /
 
         Use MACS to build forward and reverse peaks files for given .bam
-        file.
+        file(s).
         Iterate peaks through set of criteria to determine UTR viability,
         before annotating in .gff file.
         """
     )
     parser.add_argument('GFF_IN', help="input 'canonical' annotations file in gff or gtf format")
-    parser.add_argument('BAM_IN', help="input reads file in bam format")
+    parser.add_argument('BAM_IN', help="input reads file(s) in bam format")
     parser.add_argument('--max-distance', type=int, default=200,
                         help='maximum distance in bases that UTR can be from a transcript. Default: 200')
     parser.add_argument('--override-utr', action="store_true", help="ignore already annotated 3' UTRs in criteria")
